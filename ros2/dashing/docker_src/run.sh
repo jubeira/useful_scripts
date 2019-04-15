@@ -2,7 +2,7 @@
 
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 REPO_ROOT=$SCRIPTPATH/../
-IMAGE=bionic_nvidia
+IMAGE=ros2_dashing_bionic_source
 
 if [ "$#" == 0 ]; then
   EXTRA_ARGS="bash"

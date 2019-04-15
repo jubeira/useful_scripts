@@ -62,7 +62,7 @@ RUN wget https://raw.githubusercontent.com/ros2/ros2/release-latest/ros2.repos
 RUN vcs import src < ros2.repos
 
 RUN rosdep init
-RUN rosdep update && rosdep install --from-paths src --ignore-src --rosdistro bouncy -y --skip-keys "console_bridge fastcdr fastrtps libopensplice67 rti-connext-dds-5.3.1 urdfdom_headers"
+RUN rosdep update && rosdep install --from-paths src --ignore-src --rosdistro crystal -y --skip-keys "console_bridge fastcdr fastrtps libopensplice69 rti-connext-dds-5.3.1 urdfdom_headers"
 RUN colcon build --symlink-install
 
 WORKDIR /shared_ws
