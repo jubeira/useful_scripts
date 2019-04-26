@@ -13,7 +13,7 @@ fi
 xhost +
 docker run \
   --net=host -e DISPLAY=${DISPLAY} -v /dev:/dev \
-  -v ${REPO_ROOT}/shared_ws:/shared_ws \
+  -v ${HOME}:${HOME} \
   -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
   --privileged \
   -it \
