@@ -69,7 +69,7 @@ RUN rosdep update && rosdep install --from-paths src --ignore-src --rosdistro cr
 # RUN apt update && apt install libopensplice69
 # RUN apt install -q -y rti-connext-dds-5.3.1  # from packages.ros.org/ros2/ubuntu
 
-# RUN cd /opt/rti.com/rti_connext_dds-5.3.1/resource/scripts && . ./rtisetenv_x64Linux3gcc5.4.0.sh; cd - && colcon build --symlink-install
+# RUN cd /opt/rti.com/rti_connext_dds-5.3.1/resource/scripts && . ./rtisetenv_x64Linux3gcc5.4.0.bash; cd - && colcon build --symlink-install
 
 # Create a user with passwordless sudo
 RUN adduser --gecos "Development User" --disabled-password juan

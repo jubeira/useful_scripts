@@ -20,8 +20,9 @@ RUN apt update && apt install -y python3-argcomplete
 # ROS2 Dashing basic deps and packages (testing debs)
 RUN apt update && apt-get install -y curl gnupg2 lsb-release
 RUN curl http://repo.ros2.org/repos.key | apt-key add -
-RUN sh -c 'echo "deb [arch=amd64] http://packages.ros.org/ros2-testing/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/ros2-latest.list'
-RUN apt-get update && apt-get install ros-dashing-* python3-colcon-common-extensions -y
+#RUN sh -c 'echo "deb [arch=amd64] http://packages.ros.org/ros2-testing/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/ros2-latest.list'
+RUN sh -c 'echo "deb [arch=amd64] http://repo.ros2.org/ubuntu/testing `lsb_release -cs` main" > /etc/apt/sources.list.d/ros2-latest.list'
+RUN apt-get update && apt-get install ros-dashing-rclcpp ros-dashing-examples* ros-dashing-demos* ros-dashing-ros2* python3-colcon-common-extensions -y
 
 # ROS Melodic stuff
 # RUN sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'

@@ -10,8 +10,11 @@ else
   EXTRA_ARGS="bash -c \"$@\""
 fi
 
+xhost +
 docker run \
+  --net=host -e DISPLAY=${DISPLAY} -v /dev:/dev \
   -v ${HOME}:${HOME} \
+  -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
+  --privileged \
   -it \
   ${IMAGE} "${EXTRA_ARGS}"
-
